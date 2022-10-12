@@ -10,7 +10,6 @@ def is_even_len(string: str) -> bool:
         return False
 
 def remove_third_char(string: str) -> str:
-    print(string2)
     string2 = string[0:2] + string[3:]
     return string2
 
