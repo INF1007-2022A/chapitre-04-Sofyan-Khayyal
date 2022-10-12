@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import string
 
 
 def is_even_len(string: str) -> bool:
@@ -9,21 +10,30 @@ def is_even_len(string: str) -> bool:
         return False
 
 def remove_third_char(string: str) -> str:
-    print(len(string))
-    string2 = string[0:2] + string[3:12]
     print(string2)
-
+    string2 = string[0:2] + string[3:]
+    return string2
 
 def replace_char(string: str, old_char: str, new_char: str) -> str:
-    pass
-
-
+    for i in range(len(string)):
+        if string[i] == old_char:
+            string = string[:i] + new_char + string[i+1:]
+    return string
 def get_number_of_char(string: str, char: str) -> int:
-    pass
+    number_of_char = 0
+    for c in string:
+        if c == char:
+         number_of_char += 1
+    return number_of_char
+
 
 
 def get_number_of_words(sentence: str, word: str) -> int:
-    pass
+    nombre_occurence = 0
+    for c in sentence.split():
+        if c == word:
+            nombre_occurence += 1
+    return nombre_occurence
 
 
 def main() -> None:
